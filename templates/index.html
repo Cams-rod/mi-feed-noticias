@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 Mi Feed de Noticias</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Feed de Noticias</h1>
+        <div class="news-grid">
+            {% for item in news %}
+            <div class="news-item" data-id="{{ item.id }}">
+                <div class="text">
+                    <h2>
+                        <a href="{{ item.link }}" target="_blank" data-id="{{ item.id }}" class="news-title">{{ item.title }}</a>
+                    </h2>
+                    <p class="summary">{{ item.summary }}</p>
+                    {% if item.has_full_content %}
+                    <details>
+                        <summary>Ver más</summary>
+                        <div class="content">{{ item.content | safe }}</div>
+                    </details>
+                    {% endif %}
+                </div>
+                {% if item.image %}
+                <img src="{{ item.image }}" alt="{{ item.title }}" class="thumbnail">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% if not news %}
+            <p>No hay noticias para mostrar.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
