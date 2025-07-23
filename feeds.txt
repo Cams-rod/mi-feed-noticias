@@ -1,2 +1,2 @@
-https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada
-https://www.theverge.com/rss/index.xml
+https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+https://feeds.bbci.co.uk/news/rss.xml
