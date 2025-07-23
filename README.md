@@ -1,14 +1,15 @@
 # Mi Portal de Noticias Estático
 
-Este proyecto es un generador de sitios estáticos para feeds de noticias RSS, inspirado en el estilo de Studio Ghibli. Utiliza Python para leer múltiples fuentes RSS, consolida las noticias y genera un sitio web estático y personalizable que se despliega automáticamente en GitHub Pages.
+Este proyecto es un generador de sitios estáticos, inspirado en la filosofía del Jamstack, que transforma múltiples feeds RSS en un portal de noticias moderno y automatizado. Con un diseño minimalista y cálido al estilo Studio Ghibli, el sitio se actualiza de forma automática y se despliega sin necesidad de un servidor activo.
 
 ## Características
 
-* **Generador Estático:** El sitio se genera completamente en el servidor (en GitHub Actions), eliminando la necesidad de un backend en vivo.
-* **Diseño Ghibli:** Estilo visual minimalista y cálido.
-* **Personalización del Usuario:** Utiliza `localStorage` para recordar las noticias que ya has leído.
-* **Automatización:** Un "cronjob" en GitHub Actions actualiza el sitio cada 24 horas.
-* **Seguridad:** El contenido de los feeds se sanitiza con `bleach` para prevenir ataques XSS.
+* **Generador Estático:** Utiliza un script de Python para leer, procesar y consolidar las noticias en un archivo index.html. El sitio resultante es puramente estático, lo que garantiza una carga ultrarrápida y una seguridad inherente.
+* **Diseño Ghibli:** Un diseño visual minimalista, con una paleta de colores suaves y tipografía cálida, que crea una experiencia de lectura relajante y única.
+* **Personalización del Usuario:** Utiliza JavaScript y localStorage para marcar y recordar las noticias que ya has visitado, mejorando la experiencia de lectura de cada usuario.
+* **Automatización:** Gracias a GitHub Actions, el portal se actualiza automáticamente cada 24 horas, asegurando que el contenido esté siempre fresco y al día, sin intervención manual.
+* **Seguridad:** El contenido de cada feed RSS es sanitizado con la biblioteca bleach para prevenir ataques de Cross-Site Scripting (XSS).
+* **Mantenimiento:** La gestión de las fuentes de noticias es tan fácil como editar un simple archivo feeds.txt.
 
 ## Estructura del Proyecto
 ├── .github/                      # Configuración de GitHub Actions

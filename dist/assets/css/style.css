@@ -98,7 +98,9 @@ h1 img {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
+.news-title a:visited {
+    color: #616161;
+}
 .news-title a:hover {
     color: #4db6ac;
 }
