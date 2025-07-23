@@ -11,16 +11,16 @@ Este proyecto es un generador de sitios estáticos para feeds de noticias RSS, i
 * **Seguridad:** El contenido de los feeds se sanitiza con `bleach` para prevenir ataques XSS.
 
 ## Estructura del Proyecto
-├── .github/                      # Configuración de GitHub Actions
-├── assets/                       # Archivos estáticos del frontend (CSS, JS, Imágenes)
-├── dist/                         # Carpeta de salida con el sitio web generado
-├── templates/                    # Plantilla HTML de Jinja2
-├── feeds.txt                     # Fuentes RSS a leer (una por línea)
-├── fetch_feeds.py                # Script principal del generador
-├── test_fetch_feeds.py           # Pruebas unitarias para el script
-├── requirements.txt              # Dependencias de Python
-├── LICENSE                       # Licencia del proyecto (MIT)
-└── README.md                     # Este archivo
+    ├── .github/                      # Configuración de GitHub Actions
+    ├── assets/                       # Archivos estáticos del frontend (CSS, JS, Imágenes)
+    ├── dist/                         # Carpeta de salida con el sitio web generado
+    ├── templates/                    # Plantilla HTML de Jinja2
+    ├── feeds.txt                     # Fuentes RSS a leer (una por línea)
+    ├── fetch_feeds.py                # Script principal del generador
+    ├── test_fetch_feeds.py           # Pruebas unitarias para el script
+    ├── requirements.txt              # Dependencias de Python
+    ├── LICENSE                       # Licencia del proyecto (MIT)
+    └── README.md                     # Este archivo
 
 ## Guía de Uso Local
 
