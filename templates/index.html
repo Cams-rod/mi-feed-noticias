@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
@@ -13,7 +14,9 @@
 <body>
 
     <div class="container">
-        <h1><span>📰 Mi Feed de Noticias</span></h1>
+        <div class="news-header">
+            <h1><span>📰 Mi Feed de Noticias</span></h1>
+        </div>
         <div class="news-grid">
             {% for item in news %}
             <div class="news-item" data-id="{{ item.id }}">
@@ -22,21 +25,21 @@
                         <a href="{{ item.link }}" target="_blank">{{
                             item.title }}</a>
                     </h2>
-                     <p class="summary">{{ item.summary }}</p>
-                   {% if item.has_full_content %}
+                    <p class="summary">{{ item.summary }}</p>
+                    {% if item.has_full_content %}
                     <details>
-                       <summary>Leer más</summary>
+                        <summary>Leer más</summary>
                         <div class="content">{{ item.content | safe }}</div>
-                         </details>
-                    {% endif %}                   
+                    </details>
+                    {% endif %}
                 </div>
                 <a href="{{ item.link }}" target="_blank">
-                     <div class="thumbnail-container">
-                       <img src="{{ item.image }}" alt="{{ item.title }}" class="thumbnail">
-                       </div>
-                     </a>
+                    <div class="thumbnail-container">
+                        <img src="{{ item.image }}" alt="{{ item.title }}" class="thumbnail">
+                    </div>
+                </a>
             </div>
-           {% endfor %}           
+            {% endfor %}
         </div>
         {% if not news %}
         <p>No hay noticias para mostrar.</p>

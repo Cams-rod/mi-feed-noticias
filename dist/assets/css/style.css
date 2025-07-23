@@ -30,18 +30,29 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+.news-header {
+    background-color: #f0ead5;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2rem;
+}
+
 h1 {
     font-family: 'Merriweather', serif;
     color: #051105;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+
+    margin: 0;
+    padding: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
+
 
 h1 img {
     height: 40px;
@@ -56,21 +67,18 @@ h1 img {
 }
 
 .news-item {
-    /* Estilos base de la tarjeta */
     background-color: #f0e4c1;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e0e0e0;
-    
-    /* Esta es la clave: le decimos al navegador que se prepare para el cambio */
     will-change: transform, box-shadow;
 }
 
 .news-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 .news-item.read {
@@ -98,6 +106,11 @@ h1 img {
 .summary {
     color: #616161;
     font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;         
+    overflow: hidden;
 }
 
 .thumbnail-container {
@@ -145,6 +158,8 @@ details div.content {
     border-radius: 0 4px 4px 0;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 details div.content img {
@@ -156,9 +171,11 @@ details div.content img {
     .container {
         padding: 20px;
     }
+
     h1 {
         font-size: 2rem;
     }
+
     h1:after {
         width: 75px;
     }
