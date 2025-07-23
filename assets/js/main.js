@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const expandButton = item.querySelector("details summary");
         // Obtenemos el ID de la noticia desde el contenedor principal.
         const newsId = item.dataset.id;
-        
+
         // Si la noticia ya está en nuestro 'Set', le agregamos la clase CSS 'visited'.
         if (visitedIds.has(newsId)) {
             item.classList.add("visited");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         }
-        
+
         // Lógica de expansión/colapsado del contenido completo.
         if (expandButton) {
             expandButton.addEventListener("click", (event) => {
