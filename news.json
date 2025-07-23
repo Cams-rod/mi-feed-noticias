@@ -1,12 +1,42 @@
 [
   {
+    "id": "77eff6522353d2e2d75ddc7534e88e59",
+    "title": "'I felt ignored by police when I was cyberflashed'",
+    "link": "https://www.bbc.com/news/articles/cn41p1rzxllo",
+    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/0636/live/6acb24d0-42b4-11f0-8adf-5d3d31c48348.jpg",
+    "summary": "Anna Downes says she contacted the BBC after she lost hope that the police would take her seriously.",
+    "content": "Anna Downes says she contacted the BBC after she lost hope that the police would take her seriously.",
+    "published": "2025-07-23T01:19:14",
+    "has_full_content": false
+  },
+  {
+    "id": "344ba31c5ca85dea58302bcdb15fe626",
+    "title": "Trump announces 'massive' trade deal with Japan",
+    "link": "https://www.bbc.com/news/articles/cpwq4dljjdko",
+    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e23e/live/db9f32d0-6755-11f0-8f72-a7b23d06dd41.jpg",
+    "summary": "The deal would result in Japan investing $550bn (£407bn) into the US and paying a 15% reciprocal tariff, Trump said.",
+    "content": "The deal would result in Japan investing $550bn (£407bn) into the US and paying a 15% reciprocal tariff, Trump said.",
+    "published": "2025-07-23T00:57:10",
+    "has_full_content": false
+  },
+  {
     "id": "aa4ca83f1a77b478668d6d876512be99",
     "title": "As the Dollar Slides, the Euro Is Picking Up Speed",
     "link": "https://www.nytimes.com/2025/07/22/business/euro-dollar-currency-tariffs.html",
-    "image": null,
+    "image": "assets/img/fallback.jpg",
     "summary": "The euro has been gaining steam as investors seek new havens during geopolitical turmoil.",
     "content": "The euro has been gaining steam as investors seek new havens during geopolitical turmoil.",
     "published": "2025-07-22T23:12:54",
+    "has_full_content": false
+  },
+  {
+    "id": "2d1a8a3ddf0ef96c0d93c0af3c13751e",
+    "title": "Camp Mystic: Why were so many people killed there during Texas floods?",
+    "link": "https://www.bbc.com/news/videos/clyxk9wpw3eo",
+    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e2f9/live/575276d0-6742-11f0-8dbd-f3d32ebd3327.png",
+    "summary": "The recent floods in Kerr County, Texas killed 135 people, including many young children.",
+    "content": "The recent floods in Kerr County, Texas killed 135 people, including many young children.",
+    "published": "2025-07-22T23:04:45",
     "has_full_content": false
   },
   {
@@ -23,17 +53,17 @@
     "id": "133ec0b568003c766e34888517bc4ffe",
     "title": "Canada Won’t Accept a Trade Deal With the U.S. at ‘Any Cost’",
     "link": "https://www.nytimes.com/2025/07/22/world/canada/carney-trade-deal-trump.html",
-    "image": null,
+    "image": "assets/img/fallback.jpg",
     "summary": "Prime Minister Mark Carney during a visit to a steel plant this month in Hamilton, Ontario.",
     "content": "Prime Minister Mark Carney during a visit to a steel plant this month in Hamilton, Ontario.",
-    "published": "2025-07-22T21:27:47",
+    "published": "2025-07-22T21:27:48",
     "has_full_content": false
   },
   {
     "id": "f99a5e2240128937f7162f745225196d",
     "title": "Republicans Rely on Trump’s Promises to Grease the Path for His Agenda",
     "link": "https://www.nytimes.com/2025/07/22/us/politics/republicans-trump-agenda.html",
-    "image": null,
+    "image": "assets/img/fallback.jpg",
     "summary": "Republicans in Congress have increasingly ceded their power to President Trump.",
     "content": "Republicans in Congress have increasingly ceded their power to President Trump.",
     "published": "2025-07-22T19:40:14",
@@ -43,7 +73,7 @@
     "id": "e0deeca97b4e24c70b8327429670907a",
     "title": "A Trump Executive Order Prompts Park Workers to Report Displays That ‘Disparage’ Americans",
     "link": "https://www.nytimes.com/2025/07/22/climate/trump-national-park-service-history-changes.html",
-    "image": null,
+    "image": "assets/img/fallback.jpg",
     "summary": "An exhibit at Independence National Historical Park in Philadelphia recounts the brutality of slavery and was flagged for review.",
     "content": "An exhibit at Independence National Historical Park in Philadelphia recounts the brutality of slavery and was flagged for review.",
     "published": "2025-07-22T19:35:54",
@@ -53,20 +83,10 @@
     "id": "22014232a81eac41084e2f84883c49a9",
     "title": "FEMA Urban Search and Rescue Chief Resigns, Citing Agency ‘Chaos’, Colleagues Said",
     "link": "https://www.nytimes.com/2025/07/22/climate/fema-urban-search-rescue-chief-resigns.html",
-    "image": null,
+    "image": "assets/img/fallback.jpg",
     "summary": "Search and rescue personnel near the Guadalupe River in Texas on July 8 after catastrophic flooding.",
     "content": "Search and rescue personnel near the Guadalupe River in Texas on July 8 after catastrophic flooding.",
     "published": "2025-07-22T19:24:28",
-    "has_full_content": false
-  },
-  {
-    "id": "cc0fc33c407848983ec6f3c451444e50",
-    "title": "'They shot patients in beds' – BBC hears claims of massacre at Suweida hospital",
-    "link": "https://www.bbc.com/news/articles/cly84jn000do",
-    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/167e/live/cf81e5e0-671b-11f0-8139-991899391ed8.jpg",
-    "summary": "The BBC visits Suweida's National Hospital where staff claim patients were killed by Syrian government forces.",
-    "content": "The BBC visits Suweida's National Hospital where staff claim patients were killed by Syrian government forces.",
-    "published": "2025-07-22T19:02:50",
     "has_full_content": false
   },
   {
@@ -77,16 +97,6 @@
     "summary": "La vicepresidenta primera, María Jesús Montero, y el ministro de la Presidencia, Félix Bolaños.",
     "content": "La vicepresidenta primera, María Jesús Montero, y el ministro de la Presidencia, Félix Bolaños.",
     "published": "2025-07-22T17:41:31",
-    "has_full_content": false
-  },
-  {
-    "id": "59d35fb7541aad8c7dec38da47d94665",
-    "title": "Cleverly returns to Tory front bench as Badenoch reshuffles team",
-    "link": "https://www.bbc.com/news/articles/c24v0j73e75o",
-    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/131a/live/6f080310-66c2-11f0-a4de-6d8ec3aa70c3.jpg",
-    "summary": "The former foreign secretary becomes shadow housing secretary and will face Angela Rayner in Parliament.",
-    "content": "The former foreign secretary becomes shadow housing secretary and will face Angela Rayner in Parliament.",
-    "published": "2025-07-22T17:40:13",
     "has_full_content": false
   },
   {
@@ -127,16 +137,6 @@
     "summary": "El empresario Alberto González Amador, pareja de Isabel Díaz Ayuso, a la salida del Tribunal Supremo, el pasado mayo.",
     "content": "El empresario Alberto González Amador, pareja de Isabel Díaz Ayuso, a la salida del Tribunal Supremo, el pasado mayo.",
     "published": "2025-07-22T13:22:02",
-    "has_full_content": false
-  },
-  {
-    "id": "b43fbffc726597662a5fde0b9b0c71d3",
-    "title": "Ex-Unite boss McCluskey took private jet flights arranged by building firm, report finds",
-    "link": "https://www.bbc.com/news/articles/cp3kgg55410o",
-    "image": "https://ichef.bbci.co.uk/news/1024/branded_news/0cd9/live/1dfcd720-671c-11f0-8dbd-f3d32ebd3327.jpg",
-    "summary": "The ex-Unite chief enjoyed flights arranged by the firm building a controversial hotel, report seen by BBC says.",
-    "content": "The ex-Unite chief enjoyed flights arranged by the firm building a controversial hotel, report seen by BBC says.",
-    "published": "2025-07-22T13:18:41",
     "has_full_content": false
   },
   {
