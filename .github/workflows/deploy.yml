@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - master
+
 # Define un trabajo (job) llamado 'build_and_deploy'
 jobs:
   # El sistema operativo donde se ejecutará el trabajo
@@ -42,5 +43,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Directorio a publicar (la carpeta de salida del script)
           publish_dir: ./dist
+
           # Rama donde se publicará el contenido estático
           publish_branch: gh-pages
+
+
