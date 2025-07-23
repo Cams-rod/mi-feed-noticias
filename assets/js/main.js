@@ -8,50 +8,46 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Lógica para marcar noticias como leídas.
-    // Usamos un 'Set' para guardar los IDs de las noticias visitadas y evitar duplicados.
     const visitedIds = new Set(JSON.parse(localStorage.getItem("visitedIds") || "[]"));
 
-    // Seleccionamos cada tarjeta de noticia para aplicar la lógica.
     document.querySelectorAll(".news-item").forEach(item => {
         const titleLink = item.querySelector(".news-title");
         const contentDetails = item.querySelector("details");
         const image = item.querySelector(".thumbnail");
         
-        // Obtenemos el ID único de la noticia desde el atributo de datos.
         const newsId = titleLink.dataset.id;
 
-        // Si la noticia ya está en nuestro 'Set', le agregamos la clase CSS 'visited'.
         if (visitedIds.has(newsId)) {
             item.classList.add("visited");
         }
 
-        // 2. Lógica para expandir/colapsar contenido y marcar como leído.
-        // Al hacer clic en el título de la noticia:
-        titleLink.addEventListener("click", (event) => {
-            // Prevenimos que el navegador navegue a la URL por defecto del enlace.
-            event.preventDefault(); 
-            
-            // Si existe el elemento <details>, cambiamos su estado de abierto/cerrado.
-            if (contentDetails) {
-                contentDetails.open = !contentDetails.open;
-            }
-
-            // Agregamos el ID al 'Set' si no estaba.
+        // --- CAMBIO IMPORTANTE: Lógica de Marcar como Leído ---
+        // Al hacer clic en el título, solo se marca como leído.
+        // NO PREVENIMOS el comportamiento por defecto, para que el enlace funcione.
+        titleLink.addEventListener("click", () => {
             if (!visitedIds.has(newsId)) {
                 visitedIds.add(newsId);
-                // Guardamos el Set actualizado en el almacenamiento local.
                 localStorage.setItem("visitedIds", JSON.stringify([...visitedIds]));
-                // Le agregamos la clase 'visited' a la tarjeta de la noticia.
                 item.classList.add("visited");
             }
         });
+        
+        // --- NUEVA LÓGICA: Separamos la expansión del contenido ---
+        // Si existe el elemento <details> (es decir, hay contenido completo)...
+        if (contentDetails) {
+            // ...añadimos un listener al botón de expansión (<summary>) dentro de <details>.
+            // Esto evita que el clic en el título abra/cierre el contenido.
+            contentDetails.querySelector('summary').addEventListener("click", (event) => {
+                // Aquí sí usamos preventDefault() para evitar la navegación.
+                event.preventDefault();
+                contentDetails.open = !contentDetails.open;
+            });
+        }
 
         // 3. Lógica para la imagen de fallback.
-        // Si la imagen tiene un error al cargar, usamos la imagen de fallback.
         if (image) {
             image.onerror = () => {
                 image.src = 'assets/img/fallback.jpg';
-                // Opcional: Podrías añadir una clase para cambiar el estilo si usas una imagen de fallback.
                 image.classList.add('fallback-image');
             };
         }
