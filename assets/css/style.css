@@ -1,110 +1,128 @@
 /*
- * Archivo de estilos principal.
- * Inspirado en la estética de Studio Ghibli, con colores suaves,
- * tipografía cálida y un diseño minimalista.
- */
+ * Archivo de estilos principal.
+ * Inspirado en la estética de Studio Ghibli, con colores suaves,
+ * tipografía cálida y un diseño minimalista.
+ */
 
 /* --- Estilos Generales --- */
 body {
-font-family: 'Noto Serif JP', serif;
-color: #4d4d4d;
-background-color: #f0f8e9;
-line-height: 1.7;
-margin: 0;
-padding: 2rem;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+    font-family: 'Noto Serif JP', serif;
+    color: #4d4d4d;
+    background-color: #f0f8e9;
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 .container {
-max-width: 800px;
-margin: 2rem auto;
-padding: 2rem;
-background-color: #fff;
-border-radius: 8px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
-font-family: 'M PLUS Rounded 1c', sans-serif;
-font-size: 2.8rem;
-font-weight: 700;
-color: #2e7d32;
-border-bottom: 3px solid #81c784;
-padding-bottom: 0.75rem;
-margin-bottom: 2rem;
-text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2e7d32;
+    border-bottom: 3px solid #81c784;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .news-grid {
-display: grid;
-gap: 1.5rem;
-grid-template-columns: 1fr;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
 }
 
 .news-item {
-padding: 1.25rem;
-border-bottom: 1px solid #e0e0e0;
-display: flex;
-align-items: flex-start;
+    padding: 1.25rem;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: flex-start;
 }
 
 .news-item:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
 
 .news-item .text {
-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.news-item.visited .text a {
+    color: #757575;
+    font-weight: 400;
 }
 
 .news-item h2 {
-font-size: 1.6rem;
-margin-top: 0;
-margin-bottom: 0.5rem;
-color: #1b5e20;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #1b5e20;
 }
 
 .news-item a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .news-item a:hover {
-color: #43a047;
+    color: #43a047;
 }
 
 .news-item .summary {
-font-size: 1rem;
-color: #555;
-margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+.thumbnail-container {
+    width: 150px;
+    height: 100px;
+    margin-left: 1rem;
 }
 
 .thumbnail {
-    width: 150px; 
-    height: 100px; 
-    margin-left: 1rem;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
     object-fit: cover;
 }
 
 .thumbnail.no-image {
-display: none;
-}
-
-details {
-margin-top: 1rem;
-}
-
-details summary {
-cursor: pointer;
-color: #0d47a1;
-font-weight: 500;
+    display: none;
 }
 
 details div.content {
-margin-top: 0.5rem;
-padding: 0.75rem;
-border-left: 2px solid #64b5f6;
-background-color: #e3f2fd;
-border-radius: 0 4px 4px 0;
+   
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    border-left: 2px solid #64b5f6;
+    background-color: #e3f2fd;
+    border-radius: 0 4px 4px 0;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+}
+
+
+details div.content img {
+    max-width: 100%;
+    height: auto;
+}
+details {
+    margin-top: 1rem;
+}
+
+details summary {
+    cursor: pointer;
+    color: #0d47a1;
+    font-weight: 500;
 }

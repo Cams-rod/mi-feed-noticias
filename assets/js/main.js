@@ -7,48 +7,47 @@
  * 3. Gestionar la imagen de fallback en caso de errores de carga.
  */
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Lógica para marcar noticias como leídas.
+    // Lógica para marcar noticias como leídas.
     const visitedIds = new Set(JSON.parse(localStorage.getItem("visitedIds") || "[]"));
 
     document.querySelectorAll(".news-item").forEach(item => {
-        const titleLink = item.querySelector(".news-title");
-        const contentDetails = item.querySelector("details");
-        const image = item.querySelector(".thumbnail");
+        // Encontramos el enlace dentro del h2.
+        const titleLink = item.querySelector(".news-title a");
+        // Encontramos el botón de expansión dentro de <details>.
+        const expandButton = item.querySelector("details summary");
+        // Obtenemos el ID de la noticia desde el contenedor principal.
+        const newsId = item.dataset.id;
         
-        const newsId = titleLink.dataset.id;
-
+        // Si la noticia ya está en nuestro 'Set', le agregamos la clase CSS 'visited'.
         if (visitedIds.has(newsId)) {
             item.classList.add("visited");
         }
 
-        // --- CAMBIO IMPORTANTE: Lógica de Marcar como Leído ---
-        // Al hacer clic en el título, solo se marca como leído.
-        // NO PREVENIMOS el comportamiento por defecto, para que el enlace funcione.
-        titleLink.addEventListener("click", () => {
-            if (!visitedIds.has(newsId)) {
-                visitedIds.add(newsId);
-                localStorage.setItem("visitedIds", JSON.stringify([...visitedIds]));
-                item.classList.add("visited");
-            }
-        });
+        // Lógica de marcado como leído al hacer clic en el título.
+        if (titleLink) {
+            titleLink.addEventListener("click", () => {
+                if (!visitedIds.has(newsId)) {
+                    visitedIds.add(newsId);
+                    localStorage.setItem("visitedIds", JSON.stringify([...visitedIds]));
+                    item.classList.add("visited");
+                }
+            });
+        }
         
-        // --- NUEVA LÓGICA: Separamos la expansión del contenido ---
-        // Si existe el elemento <details> (es decir, hay contenido completo)...
-        if (contentDetails) {
-            // ...añadimos un listener al botón de expansión (<summary>) dentro de <details>.
-            // Esto evita que el clic en el título abra/cierre el contenido.
-            contentDetails.querySelector('summary').addEventListener("click", (event) => {
-                // Aquí sí usamos preventDefault() para evitar la navegación.
-                event.preventDefault();
+        // Lógica de expansión/colapsado del contenido completo.
+        if (expandButton) {
+            expandButton.addEventListener("click", (event) => {
+                event.preventDefault(); // Evita que se navegue al hacer clic en "Leer más".
+                const contentDetails = expandButton.closest('details');
                 contentDetails.open = !contentDetails.open;
             });
         }
 
-        // 3. Lógica para la imagen de fallback.
-        if (image) {
-            image.onerror = () => {
-                image.src = 'assets/img/fallback.jpg';
-                image.classList.add('fallback-image');
+        // Lógica para la imagen de fallback.
+        const thumbnail = item.querySelector(".thumbnail");
+        if (thumbnail) {
+            thumbnail.onerror = () => {
+                thumbnail.src = 'assets/img/fallback.jpg';
             };
         }
     });

@@ -28,15 +28,20 @@ class TestFetchFeeds(unittest.TestCase):
 
     def test_extract_content_with_content(self):
         """Prueba que extract_content priorice el campo 'content'."""
-        entry = {'content': [{'value': 'Contenido completo'}]}
+        entry = {
+            'summary': 'Un resumen breve.',
+            'content': [{'value': 'Contenido completo'}]
+        }
         result = extract_content(entry)
-        self.assertEqual(result, 'Contenido completo')
+        # El test ahora espera la tupla (contenido, indicador de contenido completo).
+        self.assertEqual(result, ('Contenido completo', True))
 
     def test_extract_content_with_summary(self):
         """Prueba que extract_content use el campo 'summary' si no hay 'content'."""
         entry = {'summary': 'Un resumen breve.'}
         result = extract_content(entry)
-        self.assertEqual(result, 'Un resumen breve.')
+        # El test ahora espera la tupla (resumen, indicador de contenido completo).
+        self.assertEqual(result, ('Un resumen breve.', False))
 
     def test_generate_id(self):
         """Prueba que generate_id sea determinista y único."""

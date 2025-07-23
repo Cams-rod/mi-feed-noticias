@@ -80,18 +80,19 @@ def extract_content(entry):
         str: El contenido HTML de la entrada.
     """
     # Usamos .get() para evitar errores si el campo no existe.
-    content = entry.get('content')
-    summary = entry.get('summary')
+    content_value = entry.get('content')
+    summary_value = entry.get('summary')
     
-    # Priorizamos el contenido completo si existe y no está vacío.
-    # Usamos .get() de nuevo para acceder al valor de forma segura.
-    if content and isinstance(content, list) and content[0].get('value'):
-        return content[0].get('value')
-    # Si no, usamos el resumen si existe.
-    elif summary:
-        return summary
+    # Verificamos si hay contenido completo y si es diferente del resumen
+    has_full_content = False
+    if content_value and isinstance(content_value, list) and content_value[0].get('value'):
+        full_content_text = content_value[0].get('value')
+        if full_content_text != summary_value:
+            has_full_content = True
+        return full_content_text, has_full_content
     
-    return "No hay contenido disponible."
+    # Si no hay contenido completo, usamos el resumen
+    return summary_value or "No hay contenido disponible.", has_full_content
 
 def extract_summary_text(html):
     """
@@ -144,20 +145,21 @@ def process_feeds():
             if feed.bozo:
                 logging.warning(f"⚠️ Error al parsear feed {url}: {feed.bozo_exception}")
                 continue
-            # Limitar a las 5 entradas más recientes
+            
             for entry in feed.entries[:5]: 
-                content_html = extract_content(entry)
+                # --- CORRECCIÓN AQUÍ: Llamamos a la función solo una vez ---
+                full_content, has_full_content = extract_content(entry)
                 
                 # Sanitizar el contenido para prevenir XSS
                 sanitized_content = bleach.clean(
-                    content_html,
+                    full_content,
                     tags=ALLOWED_TAGS,
                     attributes=ALLOWED_ATTRS,
                     strip=True
                 )
-
+                
+                # Extraemos el resumen del contenido sanitizado
                 summary_text = extract_summary_text(sanitized_content)
-                has_full_content = len(summary_text) > 300
 
                 image_url = extract_image(entry.link)
                 image = image_url if image_url and image_url.strip() else 'assets/img/fallback.jpg'
@@ -179,7 +181,6 @@ def process_feeds():
         except Exception as e:
             logging.error(f"❌ Error inesperado al procesar {url}: {e}")
 
-    # Ordenar por fecha descendente
     all_entries.sort(key=lambda x: x["published"] or "", reverse=True)
     return all_entries
 
