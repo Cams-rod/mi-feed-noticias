@@ -1,0 +1,75 @@
+body {
+    font-family: 'Georgia', 'serif';
+    color: #333;
+    background-color: #f9f7f4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-family: 'serif';
+    font-size: 2.5rem;
+    font-weight: normal;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.news-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.news-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-item h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.news-item .summary {
+    font-size: 1rem;
+    color: #666;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Estilos para el estado "visitado" */
+.news-item.visited {
+    opacity: 0.6;
+}
