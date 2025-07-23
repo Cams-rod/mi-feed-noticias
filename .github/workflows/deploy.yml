@@ -1,16 +1,21 @@
+# Nombre del flujo de trabajo visible en la interfaz de GitHub Actions
 name: Generar y Publicar Feed
-
+# Define cuándo se ejecutará este flujo de trabajo
 on:
   schedule:
     - cron: '0 0 * * *' # Se ejecuta a medianoche UTC cada 24 Horas
+  # Define cuándo se ejecutará este flujo de trabajo
   workflow_dispatch:
+  # Se ejecuta cada vez que se hace un 'push' a la rama 'master'
   push:
     branches:
-      - main
-
+      - master
+# Define un trabajo (job) llamado 'build_and_deploy'
 jobs:
+  # El sistema operativo donde se ejecutará el trabajo
   build_and_deploy:
     runs-on: ubuntu-latest
+    # Lista de pasos (steps) que se ejecutarán en el trabajo
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v3
@@ -29,9 +34,13 @@ jobs:
         run: python fetch_feeds.py
         
       - name: Desplegar en GitHub Pages
+      # Solo se ejecuta si el commit es en la rama 'master'
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
+          # Token para autenticar el despliegue
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Directorio a publicar (la carpeta de salida del script)
           publish_dir: ./dist
+          # Rama donde se publicará el contenido estático
           publish_branch: gh-pages
